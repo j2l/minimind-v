@@ -36,7 +36,7 @@ class MiniMindVLM(MiniMindLM):
 
     @staticmethod
     def get_vision_model(model_path="./model/vision_model/clip-vit-base-patch16"):
-        model = CLIPModel.from_pretrained(model_path)
+        model = CLIPModel.from_pretrained(model_path, repo_type="model")
         processor = CLIPProcessor.from_pretrained(model_path)
         # 冻结 vision_encoder 的所有参数
         for param in model.parameters():
